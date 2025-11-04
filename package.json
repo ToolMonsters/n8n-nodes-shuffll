@@ -1,0 +1,47 @@
+{
+  "name": "n8n-nodes-shuffll",
+  "version": "1.0.2",
+  "description": "n8n node for Shuffll - AI-powered video creation platform",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "shuffll",
+    "video",
+    "ai"
+  ],
+  "license": "MIT",
+  "homepage": "https://shuffll.com",
+  "author": {
+    "name": "Shuffll",
+    "email": "info@shuffll.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/n8n-nodes-shuffll.git"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && npm run copy-icons",
+    "copy-icons": "mkdir -p dist/nodes/Shuffll && cp nodes/Shuffll/*.svg dist/nodes/Shuffll/",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ShuffllApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Shuffll/Shuffll.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "n8n-workflow": "^1.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {}
+}
